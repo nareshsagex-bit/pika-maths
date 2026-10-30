@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pikachu Maths</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="engine.js"></script>
+  <script defer src="figure.js"></script>
+</head>
+<body>
+  <main class="app">
+    <section class="col code-col">
+      <header class="bar">
+        <div class="title"><b>pikachu.js</b> <span id="partCount">0 / 0 parts</span></div>
+        <div class="btns">
+          <button data-speed="1" class="on">1×</button>
+          <button data-speed="3">3×</button>
+          <button data-speed="5">5×</button>
+          <button data-speed="7">7×</button>
+          <button data-speed="10">10×</button>
+          <button id="skip">skip</button>
+          <button id="replay">replay</button>
+        </div>
+      </header>
+      <div class="code" id="code"><pre><span id="codeDone"></span><span id="codeLive"></span></pre></div>
+    </section>
+
+    <section class="col ref-col" id="refCol">
+      <header class="bar"><div class="title"><b>reference</b></div></header>
+      <div class="ref">
+        <img id="refImg" src="pikachu-refrence.jpg" alt="Reference: Pikachu in a white ghost hood holding a scythe">
+      </div>
+      <p class="hint">drop an image here to swap the reference</p>
+    </section>
+
+    <section class="col render-col">
+      <header class="bar">
+        <div class="title"><b>render</b> <span>for-loop pixels · <span id="phase">line art</span></span></div>
+        <div class="btns">
+          <button data-mode="pixels" class="on">pixels</button>
+          <button data-mode="dots">dots</button>
+          <button data-mode="ascii">ascii</button>
+          <button data-fx="overlay">overlay</button>
+          <button id="copy">copy</button>
+        </div>
+      </header>
+      <div class="render-body">
+        <div class="stage" id="stage">
+          <canvas id="canvas"></canvas>
+          <p class="help">scroll to zoom where you point · drag to pan · double-click to reset</p>
+        </div>
+        <aside class="side">
+          <h3>effects</h3>
+          <button class="toggle" data-fx="sparks"><i class="dot" style="--c:#f2c230"></i>sparks</button>
+          <button class="toggle" data-fx="glow"><i class="dot" style="--c:#f28b76"></i>cheek glow</button>
+          <h3>style</h3>
+          <button class="toggle" data-fx="ink"><i class="dot half"></i>ink mode</button>
+          <button class="toggle" data-fx="dark"><i class="dot" style="--c:#17141b"></i>dark background</button>
+          <h3>parts</h3>
+          <ul class="parts" id="parts"></ul>
+        </aside>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
